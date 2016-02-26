@@ -1,0 +1,185 @@
+body, html
+{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+	background:#349862 url("../img/table.png") repeat;
+	color:white;
+}
+body{
+	position:relative;
+	padding:70px 20px 20px 170px;
+		
+	display:-o-box;
+	display:-ms-box;
+	display:-moz-box;
+	display:-webkit-box;
+	display:box;
+	-o-box-orient:horizontal;
+	-ms-box-orient:horizontal;
+	-moz-box-orient:horizontal;
+	-webkit-box-orient:horizontal;
+	box-orient:horizontal;
+	-o-box-pack:center;
+	-ms-box-pack:center;
+	-moz-box-pack:center;
+	-webkit-box-pack:center;
+	box-pack:center;
+	-o-box-align:center;
+	-ms-box-align:center;
+	-moz-box-align:center;
+	-webkit-box-align:center;
+	box-align:center;
+}
+h1, h2, h3{
+	margin:0;
+}
+
+header, aside, #game_field, footer, body{
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+	header{
+		position:absolute;
+		top:10px;
+		left:0;
+		text-align:center;
+		width:100%;
+		padding-left:150px;
+	}
+	aside{
+		position: absolute;
+	    top: 20px;
+	    left: 20px;
+	    bottom:20px;
+	    width: 130px;
+		padding:20px 0;	
+		border-radius:10px;
+		color:black;
+		text-align:center;
+				
+		-o-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+		-ms-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+		-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+		-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+		box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+	}
+		aside h2{
+			margin-bottom:22px;
+			font-weight: normal;
+		}
+		aside figure{
+			margin:10px;
+			padding:10px 0 5px;
+			border-radius:10px;
+		}
+		aside .active{
+			color:white;
+			
+			-o-box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset;
+			-ms-box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset;
+			-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset;
+			-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset;
+			box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset;
+		}
+			aside .score{
+				font-size: 40px;
+				font-weight: bold;
+			}
+		
+	#game_field{
+		width:516px;
+		z-index: 10;
+		position: relative;
+	}
+		#game_field .card{
+			cursor:pointer;
+			position: relative;
+			float:left;
+			margin:7px;
+			
+			-o-perspective: 600px;
+			-ms-perspective: 600px;
+			-moz-perspective: 600px;
+			-webkit-perspective: 600px;
+			perspective: 600px;
+		}
+		#game_field .flip, #game_field .done{
+			cursor:default;
+		}
+			#game_field .front, #game_field .back{
+				position:absolute;
+				top:0;
+				left:0;
+				
+				-o-backface-visibility: hidden;
+				-ms-backface-visibility: hidden;
+				-moz-backface-visibility: hidden;
+				-webkit-backface-visibility: hidden;
+				backface-visibility:hidden;
+				
+				-o-transform-style: preserve-3d;
+				-ms-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+				
+				-o-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+				-ms-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+				-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+				-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+				box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+				
+				-o-transition: all .4s ease-in-out;
+				-ms-transition: all .4s ease-in-out;
+				-moz-transition: all .4s ease-in-out;
+				-webkit-transition: all .4s ease-in-out;
+				transition: all .4s ease-in-out;
+			}
+			#game_field .back{
+				background-image:url("../img/card_back.jpg");
+				
+				-o-transform: rotateY(0deg);
+				-ms-transform: rotateY(0deg);
+				-moz-transform: rotateY(0deg);
+				-webkit-transform: rotateY(0deg);
+				transform: rotateY(0deg);
+			}
+			#game_field .front{
+				background-image:url("../img/cards.png");
+				
+				-o-transform: rotateY(-180deg);
+				-ms-transform: rotateY(-180deg);
+				-moz-transform: rotateY(-180deg);
+				-webkit-transform: rotateY(-180deg);
+				transform: rotateY(-180deg);
+			}
+			#game_field .flip .back, #game_field .done .back{
+				-o-transform: rotateY(180deg);
+				-ms-transform: rotateY(180deg);
+				-moz-transform: rotateY(180deg);
+				-webkit-transform: rotateY(180deg);
+				transform: rotateY(180deg);
+			}
+			#game_field .flip .front, #game_field .done .front{
+				-o-transform: rotateY(0deg);
+				-ms-transform: rotateY(0deg);
+				-moz-transform: rotateY(0deg);
+				-webkit-transform: rotateY(0deg);
+				transform: rotateY(0deg);
+			}
+	footer{
+		position:absolute;
+		left: 0;
+		bottom:0;
+		width:100%;
+		text-align:center;
+		font-size:9px;
+		padding-bottom:5px;
+		z-index: 1;
+	}
